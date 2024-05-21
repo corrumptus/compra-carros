@@ -17,3 +17,10 @@ main {
     border-radius: 0.8rem;
     overflow: hidden;
 }
+
+h1 {
+    margin: unset;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #ffffff44;
+}
