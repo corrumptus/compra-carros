@@ -1,0 +1,6 @@
+main {
+    background-image: url("../../../compra-carros.jpg");
+    background-size: cover;
+    background-position: center right;
+    height: 100%;
+}
