@@ -3,9 +3,9 @@ import "./comprar-carros.css";
 export default function ComprarCarros() {
   return (
     <main>
-      <div>
+      <div className="lista-container">
         <h1>Lista de Carro</h1>
-        <div>
+        <div className="table-wrapper">
           <table>
             <thead>
               <tr>
