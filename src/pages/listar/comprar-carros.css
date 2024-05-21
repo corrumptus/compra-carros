@@ -7,3 +7,13 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+.lista-container {
+    width: 82vw;
+    height: 90vh;
+    background-color: #ffffff55;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0.4rem 0.8rem #00000055;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
