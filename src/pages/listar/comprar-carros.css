@@ -25,3 +25,12 @@ h1 {
     padding: 0.8rem 1rem;
     background-color: #ffffff44;
 }
+
+.table-wrapper {
+    width: 95%;
+    max-height: calc(89% - 0.8rem);
+    background-color: #ffffffbb;
+    margin: 0.8rem auto;
+    border-radius: 0.6rem;
+    overflow: auto;
+}
