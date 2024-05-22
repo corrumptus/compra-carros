@@ -24,7 +24,10 @@ export default function ComprarCarros() {
                 <th>Estoque</th>
               </tr>
             </thead>
-            <tbody>{carros.map(c => <CarroComponent key={c.id} carro={c} />)}</tbody>
+            <tbody>{carros
+              .map(carro => ({ ...carro, estoque: carros.filter(c => c.modelo === carro.modelo).length }))
+              .map(carro => <CarroComponent key={carro.id} carro={carro} />)
+            }</tbody>
           </table>
         </div>
       </div>
