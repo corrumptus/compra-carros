@@ -2,6 +2,9 @@ import "./actionBar.css";
 
 export default function ActionBar() {
   return (
-    <div>ActionBar</div>
+    <header>
+      <button>Carros</button>
+      <button>Cadastrar</button>
+    </header>
   )
 }
