@@ -1,6 +1,6 @@
 import Carro from "../model/Carro";
 
-class CarrosAPILS implements API<number, "id", Carro> {
+export default class CarrosAPILS implements API<number, "id", Carro> {
     getAll(): Carro[] {
         throw new Error("Method not implemented.");
     }
