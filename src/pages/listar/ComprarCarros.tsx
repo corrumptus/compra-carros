@@ -1,6 +1,13 @@
+import CarrosAPILS from "../../api/CarrosAPILS";
+import Carro from "../../model/Carro";
+import CarroComponent from "./CarroComponent";
 import "./comprar-carros.css";
 
 export default function ComprarCarros() {
+  const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
+
+  const carros = carrosAPI.getAll();
+
   return (
     <main>
       <div className="lista-container">
@@ -17,7 +24,7 @@ export default function ComprarCarros() {
                 <th>Estoque</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>{carros.map(c => <CarroComponent key={c.id} carro={c} />)}</tbody>
           </table>
         </div>
       </div>
