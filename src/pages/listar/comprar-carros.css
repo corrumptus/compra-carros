@@ -23,13 +23,13 @@ h1 {
     margin: unset;
     width: 100%;
     padding: 0.8rem 1rem;
-    background-color: #ffffff44;
+    background-color: #ffffff87;
 }
 
 .table-wrapper {
     width: 95%;
     max-height: calc(89% - 0.8rem);
-    background-color: #ffffffbb;
+    background-color: #ffffff87;
     margin: 0.8rem auto;
     border-radius: 0.6rem;
     overflow: auto;
@@ -44,5 +44,5 @@ th {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #d5d1defe;
+    background-color: #d5d1dea6;
 }
