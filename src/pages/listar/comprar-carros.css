@@ -51,3 +51,15 @@ th {
     left: 0;
     background-color: #d5d1de;
 }
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff55;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #00000017;
+}
+
+tbody tr:hover {
+    background-color: #ffffffcf;
+}
