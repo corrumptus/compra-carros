@@ -1,3 +1,5 @@
+import "./cadastrar-carro.css";
+
 export default function CadastrarCarro() {
   return (
     <main>
