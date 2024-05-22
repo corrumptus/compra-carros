@@ -9,12 +9,12 @@ export default function ComprarCarros() {
           <table>
             <thead>
               <tr>
-                <td>Modelo</td>
-                <td>Fabricante</td>
-                <td>Ano</td>
-                <td>Potência</td>
-                <td>Preço</td>
-                <td>Estoque</td>
+                <th>Modelo</th>
+                <th>Fabricante</th>
+                <th>Ano</th>
+                <th>Potência</th>
+                <th>Preço</th>
+                <th>Estoque</th>
               </tr>
             </thead>
             <tbody></tbody>
