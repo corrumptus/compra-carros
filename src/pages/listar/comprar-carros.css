@@ -34,3 +34,8 @@ h1 {
     border-radius: 0.6rem;
     overflow: auto;
 }
+
+table, th, td {
+    padding: 1rem;
+    border-collapse: collapse;
+}
