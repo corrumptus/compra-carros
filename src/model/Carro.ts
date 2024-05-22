@@ -5,8 +5,7 @@ type Carro = {
     fabricante: string,
     ano: number,
     potencia: number,
-    preco: number,
-    estoque: number
+    preco: number
 }
 
 export default Carro;
