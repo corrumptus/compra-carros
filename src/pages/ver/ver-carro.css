@@ -21,3 +21,9 @@ main#ver h1 {
     margin: unset;
     text-align: center;
 }
+
+main#ver p {
+    margin: unset;
+    font-size: 1.4em;
+    font-weight: bold;
+}
