@@ -3,3 +3,15 @@ header#action-bar {
     gap: 5px;
     background-color: #cfcfcf;
 }
+
+header#action-bar button {
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.1em;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+header#action-bar button:hover {
+    background-color: gray;
+}
