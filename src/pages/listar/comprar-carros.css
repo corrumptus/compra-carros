@@ -6,6 +6,7 @@ main#listar {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 main#listar .lista-container {
