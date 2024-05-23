@@ -16,3 +16,14 @@ form {
 h1 {
     width: max-content;
 }
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+div:last-child {
+    flex-direction: row;
+    gap: 0.7rem;
+    justify-content: center;
+}
