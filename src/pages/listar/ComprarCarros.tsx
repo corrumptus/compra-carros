@@ -2,6 +2,7 @@ import { useState } from "react";
 import CarrosAPILS from "../../api/CarrosAPILS";
 import Carro from "../../model/Carro";
 import CarroComponent from "./CarroComponent";
+import useToasters, { ToasterType } from "../../toaster/Toaster";
 import "./comprar-carros.css";
 
 export default function ComprarCarros() {
@@ -9,14 +10,19 @@ export default function ComprarCarros() {
 
   const [ carros, setCarros ] = useState(carrosAPI.getAll());
 
+  const [ Toasters, addToaster ] = useToasters();
+
   function handleExcluir(id: number) {
     carrosAPI.delete(id);
 
     setCarros(carrosAPI.getAll());
+
+    addToaster("Car deleted successfully", ToasterType.SUCCESS);
   }
 
   return (
     <main id="listar">
+      {Toasters}
       <div className="lista-container">
         <h1>Lista de Carro</h1>
         <div className="table-wrapper">
