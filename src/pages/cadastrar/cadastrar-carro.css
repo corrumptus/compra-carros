@@ -1,10 +1,10 @@
-main {
+main#cadastrar  {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-form {
+main#cadastrar form {
     padding: 2rem;
     background-color: #ffffff88;
     display: flex;
@@ -13,22 +13,22 @@ form {
     border-radius: 1rem;
 }
 
-h1 {
+main#cadastrar h1 {
     width: max-content;
 }
 
-div {
+main#cadastrar div {
     display: flex;
     flex-direction: column;
 }
 
-div:last-child {
+main#cadastrar div:last-child {
     flex-direction: row;
     gap: 0.7rem;
     justify-content: center;
 }
 
-label {
+main#cadastrar label {
     width: max-content;
     transform: translate(8px, 24px);
     transition: 0.7s ease;
@@ -36,36 +36,36 @@ label {
     color: gray;
 }
 
-div:has(input:focus, input:not(:placeholder-shown)) > label {
+main#cadastrar div:has(input:focus, input:not(:placeholder-shown)) > label {
     transform: translate(0px, 0px);
     color: black;
 }
 
-input {
+main#cadastrar input {
     font-size: 1.1em;
     border-radius: 0.7rem;
     border: 1px solid #4d4d4d;
 }
 
-button {
+main#cadastrar button {
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
     transition: 0.5s ease-out;
 }
 
-button:hover {
+main#cadastrar button:hover {
     box-shadow: 0 0 7px 0 white;
 }
 
-button:nth-child(1) {
+main#cadastrar button:nth-child(1) {
     background-color: gray;
 }
 
-button:nth-child(2) {
+main#cadastrar button:nth-child(2) {
     background-color: #ff3131;
 }
 
-button:nth-child(3) {
+main#cadastrar button:nth-child(3) {
     background-color: #69cd1a;
 }
