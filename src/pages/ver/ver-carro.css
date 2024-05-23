@@ -27,3 +27,7 @@ main#ver p {
     font-size: 1.4em;
     font-weight: bold;
 }
+
+main#ver span {
+    font-size: 1.2em;
+}
