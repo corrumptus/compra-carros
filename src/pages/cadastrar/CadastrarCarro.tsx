@@ -1,8 +1,23 @@
 import { useNavigate } from "react-router-dom";
+import Carro from "../../model/Carro";
+import CarrosAPILS from "../../api/CarrosAPILS";
 import "./cadastrar-carro.css";
 
 export default function CadastrarCarro() {
   const navigator = useNavigate();
+
+  const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
+  
+  function handleCadastrar() {
+    carrosAPI.create({
+      modelo: "",
+      fabricante: "",
+      numeroSerie: -1,
+      ano: -1,
+      potencia: -1,
+      preco: -1
+    });
+  }
 
   return (
     <main>
@@ -34,7 +49,7 @@ export default function CadastrarCarro() {
         <div>
           <button onClick={() => navigator("/")}>Voltar</button>
           <button type="reset">Limpar</button>
-          <button>Cadastrar</button>
+          <button onClick={handleCadastrar}>Cadastrar</button>
         </div>
       </form>
     </main>
