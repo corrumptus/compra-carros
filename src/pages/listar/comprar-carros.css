@@ -66,3 +66,9 @@ main#listar tbody tr:hover {
 main#listar td {
     font-size: 1.2em;
 }
+
+main#listar tr > td:last-child {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
