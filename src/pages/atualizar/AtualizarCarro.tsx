@@ -34,7 +34,21 @@ export default function AtualizarCarro() {
     const changedField = e.target.id;
     const newValue = e.target.value;
 
-    setUpdateCarro(prev => ({ ...prev, [changedField]: newValue }));
+    const isStringMap = {
+      "modelo": true,
+      "fabricante": true,
+      "ano": false,
+      "potencia": false,
+      "preco": false,
+      "numeroSerie": false
+    }
+
+    setUpdateCarro(prev => ({
+      ...prev,
+      [changedField]: isStringMap[changedField as keyof typeof isStringMap]
+        ? newValue
+        : Number(newValue)
+    }));
   }
 
   function handleDelete(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
