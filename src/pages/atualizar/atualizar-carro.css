@@ -10,7 +10,7 @@ main#cadastrar  {
 
 main#cadastrar form {
     padding: 2rem;
-    background-color: #ffffff88;
+    background-color: #d3d3d3ba;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
