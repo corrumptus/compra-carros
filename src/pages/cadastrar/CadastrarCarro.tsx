@@ -17,12 +17,12 @@ export default function CadastrarCarro() {
   });
 
   const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
-  
+
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const changedField = e.target.id;
     const newValue = e.target.value;
 
-    setNewCarro(prev => ({...prev, [changedField]: newValue}));
+    setNewCarro(prev => ({ ...prev, [changedField]: newValue }));
   }
 
   function handleCadastrar() {
