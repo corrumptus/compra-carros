@@ -2,10 +2,19 @@ import Carro from "../model/Carro";
 
 export default class CarrosAPILS implements API<number, "id", Carro> {
     private LOCAL_STORAGE_KEY = "carros_local_storage";
+    private nextId;
 
     constructor() {
-        if (localStorage.getItem(this.LOCAL_STORAGE_KEY) === undefined)
+        if (localStorage.getItem(this.LOCAL_STORAGE_KEY) === undefined) {
             localStorage.setItem(this.LOCAL_STORAGE_KEY, "");
+            this.nextId = 1;
+        } else {
+            const carros = this.getAll();
+
+            const lastCarro = carros[carros.length - 1];
+
+            this.nextId = lastCarro.id + 1;
+        }
     }
 
     getAll(): Carro[] {
