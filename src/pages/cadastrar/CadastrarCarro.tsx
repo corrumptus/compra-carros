@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
 import "./cadastrar-carro.css";
+import useToasters from "../../toaster/Toaster";
 
 export default function CadastrarCarro() {
   const navigator = useNavigate();
+
+  const [ Toasters, addToaster ] = useToasters();
 
   const [ newCarro, setNewCarro ] = useState<Omit<Carro, "id">>({
     modelo: "",
@@ -15,8 +18,6 @@ export default function CadastrarCarro() {
     potencia: -1,
     preco: -1
   });
-
-  const [ error, setError ] = useState("");
 
   const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
 
@@ -58,11 +59,12 @@ export default function CadastrarCarro() {
     formTag?.querySelectorAll("input").forEach(input => input.value = "");
   }
 
-  function handleCadastrar() {
+  function handleCadastrar(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     try {
       carrosAPI.create(newCarro);
     } catch (error) {
-      setError((error as Error).message);
+      e.preventDefault();
+      addToaster((error as Error).message);
     }
   }
 
@@ -73,12 +75,7 @@ export default function CadastrarCarro() {
 
   return (
     <main id="cadastrar">
-      {
-        error !== "" &&
-        <div id="error">
-          {error}
-        </div>
-      }
+      {Toasters}
       <form>
         <h1>Cadastrar Carro</h1>
         <div>
