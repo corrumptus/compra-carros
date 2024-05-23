@@ -26,11 +26,10 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
         return this.getAll().find(carro => carro.id === key);
     }
 
-    create(create: Omit<Carro, "id">): Carro | undefined {
+    create(create: Omit<Carro, "id">): Carro {
         const carros = this.getAll();
 
-        if (!this.verificaCarro(create, carros, false))
-            return undefined;
+        this.verificaCarro(create, carros, false);
 
         const newCarro: Carro = {...create, id: this.nextId};
 
@@ -41,11 +40,10 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
         return newCarro;
     }
 
-    update(update: Carro): Carro | undefined {
+    update(update: Carro): Carro {
         const carros = this.getAll();
 
-        if (!this.verificaCarro(update, carros, true))
-            return undefined;
+        this.verificaCarro(update, carros, true);
 
         localStorage.setItem(
             this.LOCAL_STORAGE_KEY,
@@ -63,48 +61,41 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
         return true;
     }
 
-    private verificaCarro(carro: Partial<Carro>, carros: Carro[], isEditing: boolean): boolean {
-        if (
-            carro.modelo === undefined ||
-            carro.fabricante === undefined ||
-            carro.ano === undefined ||
-            carro.potencia === undefined ||
-            carro.preco === undefined ||
-            carro.numeroSerie === undefined
-        )
-            return false;
-
+    private verificaCarro(carro: Partial<Carro>, carros: Carro[], isEditing: boolean) {
         if (!isEditing && carro.id !== undefined)
-            return false;
+            throw new Error("Carro id must be undefined");
 
         if (isEditing && carro.id === undefined)
-            return false;
+            throw new Error("Carro id is missing");
 
-        if (!this.isString(carro.modelo))
-            return false;
+        if (carro.modelo === undefined || !this.isString(carro.modelo))
+            throw new Error("Carro modelo must be a valid string");
 
-        if (!this.isString(carro.fabricante))
-            return false;
+        if (carro.fabricante === undefined || !this.isString(carro.fabricante))
+            throw new Error("Carro fabricante must be a valid string");
 
-        if (!this.isNumber(carro.ano))
-            return false;
+        if (carro.ano === undefined || !this.isNumber(carro.ano))
+            throw new Error("Carro ano must be a valid number");
 
-        if (!this.isNumber(carro.potencia))
-            return false;
+        if (carro.potencia === undefined || !this.isNumber(carro.potencia))
+            throw new Error("Carro potencia must be a valid number");
 
-        if (!this.isNumber(carro.preco))
-            return false;
+        if (carro.preco === undefined || !this.isNumber(carro.preco))
+            throw new Error("Carro preco must be a valid number");
 
-        if (!this.isNumber(carro.numeroSerie))
-            return false;
+        if (carro.numeroSerie === undefined || !this.isNumber(carro.numeroSerie))
+            throw new Error("Carro numero de serie must be a valid number");
+
+        if (
+            carros.find(c => c.id !== carro.id && c.numeroSerie === carro.numeroSerie) !== undefined
+        )
+            throw new Error(`Carro with the numero de serie ${carro.numeroSerie} already exists`);
 
         if (!isEditing && carros.find(c => c.numeroSerie === carro.numeroSerie) !== undefined)
-            return false;
+            throw new Error("Numero de serie already exists");
 
         if (isEditing && carros.find(c => c.id === carro.id) === undefined)
-            return false;
-
-        return true;
+            throw new Error(`Carro with the id ${carro.id} not exists`);
     }
 
     private isString(value: string): value is string {
