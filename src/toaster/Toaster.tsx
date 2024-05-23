@@ -1,12 +1,17 @@
 import { useState } from "react";
 import "./toaster.css";
 
+export enum ToasterType {
+  INFO = "info",
+  ERROR = "error"
+}
+
 export default function useToasters() {
-  const [ messages, setMessages ] = useState<string[]>([]);
+  const [ toasters, setToasters ] = useState<{ message: string, type: ToasterType }[]>([]);
   const [ timeouts, setTimeouts ] = useState<number[]>([]);
 
-  function add(message: string) {
-    setMessages(prev => [ ...prev, message ]);
+  function add(message: string, type: ToasterType) {
+    setToasters(prev => [ ...prev, { message, type } ]);
 
     const timeout = setTimeout(() => {
       deleteToaster(timeout);
@@ -22,14 +27,14 @@ export default function useToasters() {
       if (t !== timeout)
         return true;
 
-      setMessages(prev => prev.filter((_, index) => index !== i))
+      setToasters(prev => prev.filter((_, index) => index !== i))
       return false;
     }));
   }
 
   return [
     <Toasters
-      messages={messages}
+      toasters={toasters}
       timeouts={timeouts}
       deleteToaster={deleteToaster}
     />,
@@ -38,20 +43,20 @@ export default function useToasters() {
 }
 
 function Toasters({
-  messages,
+  toasters,
   timeouts,
   deleteToaster
 }: {
-  messages: string[],
+  toasters: { message: string, type: ToasterType }[],
   timeouts: number[],
   deleteToaster: (timeout: number) => void
 }) {
   return (
     <div className="toaster-container">
-      {messages.map((m, i) =>
+      {toasters.map((t, i) =>
         <Toaster
           key={timeouts[i]}
-          error={m}
+          toasterInfo={t}
           deleteToaster={() => deleteToaster(timeouts[i])}
         />
       )}
@@ -60,15 +65,15 @@ function Toasters({
 }
 
 function Toaster({
-  error,
+  toasterInfo,
   deleteToaster
 }: {
-  error: string,
+  toasterInfo: { message: string, type: ToasterType },
   deleteToaster: () => void
 }) {
   return (
-    <div className="toaster" onClick={deleteToaster}>
-      {error}
+    <div className={`toaster ${toasterInfo.type}`} onClick={deleteToaster}>
+      {toasterInfo.message}
     </div>
   )
 }
