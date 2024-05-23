@@ -56,7 +56,7 @@ export default function AtualizarCarro() {
 
   function handleDelete(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     e.preventDefault();
-    
+
     carrosAPI.delete(updateCarro.id);
     navigator("/");
   }
