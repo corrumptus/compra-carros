@@ -2,21 +2,24 @@ import { useNavigate } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
 import "./cadastrar-carro.css";
+import { useState } from "react";
 
 export default function CadastrarCarro() {
   const navigator = useNavigate();
 
+  const [ newCarro, setNewCarro ] = useState<Omit<Carro, "id">>({
+    modelo: "",
+    fabricante: "",
+    numeroSerie: -1,
+    ano: -1,
+    potencia: -1,
+    preco: -1
+  });
+
   const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
   
   function handleCadastrar() {
-    carrosAPI.create({
-      modelo: "",
-      fabricante: "",
-      numeroSerie: -1,
-      ano: -1,
-      potencia: -1,
-      preco: -1
-    });
+    carrosAPI.create(newCarro);
   }
 
   return (
