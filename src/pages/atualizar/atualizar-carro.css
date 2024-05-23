@@ -60,7 +60,7 @@ main#atualizar button {
 }
 
 main#atualizar button:hover {
-    box-shadow: 0 0 7px 0 white;
+    box-shadow: 0 0 7px 3px #919191;
 }
 
 main#atualizar button:nth-child(1) {
