@@ -40,19 +40,12 @@ export default function AtualizarCarro() {
   function clearInputs(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     e.preventDefault();
 
-    setUpdateCarro({
-      id: -1,
-      modelo: "",
-      fabricante: "",
-      numeroSerie: -1,
-      ano: -1,
-      potencia: -1,
-      preco: -1
-    });
+    setUpdateCarro(carrosAPI.get(Number(id)) as Carro);
 
     const formTag = e.currentTarget.parentElement?.parentElement;
 
-    formTag?.querySelectorAll("input").forEach(input => input.value = "");
+    formTag?.querySelectorAll("input")
+      .forEach(input => input.value = String(updateCarro[input.id as keyof Carro]));
   }
 
   function handleAtualizar() {
