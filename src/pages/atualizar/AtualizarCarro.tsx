@@ -63,7 +63,11 @@ export default function AtualizarCarro() {
   function handleAtualizar(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     e.preventDefault();
 
-    carrosAPI.update(updateCarro);
+    try {
+      carrosAPI.update(updateCarro);
+    } catch (error) {
+      setError((error as Error).message);
+    }
   }
 
   function handleBack(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
