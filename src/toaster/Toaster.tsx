@@ -14,7 +14,7 @@ export default function useToasters() {
 function Toasters({ messages }: { messages: string[] }) {
   return (
     <div className="toaster-container">
-      {messages.map(m => <Toaster error={m} key={m} />)}
+      {messages.map((m, i) => <Toaster error={m} key={m+i} />)}
     </div>
   )
 }
