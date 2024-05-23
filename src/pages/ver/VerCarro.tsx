@@ -47,7 +47,7 @@ export default function VerCarro() {
           <span>{carro.numeroSerie}</span>
         </div>
         <div>
-          <button onClick={() => navigator("/")}>Voltar</button>
+          <button onClick={() => navigator(-1)}>Voltar</button>
           <button onClick={() => navigator(`/carro/${carro.id}/edit`)}>Editar</button>
           <button onClick={handleDelete}>Excluir</button>
         </div>

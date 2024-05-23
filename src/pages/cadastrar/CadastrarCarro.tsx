@@ -75,7 +75,7 @@ export default function CadastrarCarro() {
           <input type="number" id="preco" onChange={handleChange} placeholder=" " />
         </div>
         <div>
-          <button onClick={() => navigator("/")}>Voltar</button>
+          <button onClick={() => navigator(-1)}>Voltar</button>
           <button onClick={clearInputs}>Limpar</button>
           <button onClick={handleCadastrar}>Cadastrar</button>
         </div>
