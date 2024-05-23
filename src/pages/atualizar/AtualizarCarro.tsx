@@ -28,7 +28,7 @@ export default function AtualizarCarro() {
 
   useEffect(() => {
     setUpdateCarro(carrosAPI.get(Number(id)) as Carro);
-  });
+  }, []);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const changedField = e.target.id;
