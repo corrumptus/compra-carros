@@ -5,6 +5,7 @@ import ActionBar from './ActionBar'
 import AtualizarCarro from './pages/atualizar/AtualizarCarro'
 import ComprarCarros from './pages/listar/ComprarCarros'
 import CadastrarCarro from './pages/cadastrar/CadastrarCarro'
+import VerCarro from './pages/ver/VerCarro'
 import "./index.css"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -14,7 +15,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<ComprarCarros />} />
         <Route path="/carro" element={<CadastrarCarro />} />
-        <Route path="/carro/:id" element={<AtualizarCarro />} />
+        <Route path="/carro/:id" element={<VerCarro />} />
+        <Route path="/carro/:id/edit" element={<AtualizarCarro />} />
       </Routes>
     </Router>
   </React.StrictMode>
