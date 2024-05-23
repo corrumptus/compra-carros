@@ -16,6 +16,8 @@ export default function CadastrarCarro() {
     preco: -1
   });
 
+  const [ error, setError ] = useState("");
+
   const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -67,6 +69,12 @@ export default function CadastrarCarro() {
 
   return (
     <main id="cadastrar">
+      {
+        error !== "" &&
+        <div id="error">
+          {error}
+        </div>
+      }
       <form>
         <h1>Cadastrar Carro</h1>
         <div>
