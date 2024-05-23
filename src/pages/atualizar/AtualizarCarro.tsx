@@ -62,27 +62,27 @@ export default function AtualizarCarro() {
         <h1>Cadastrar Carro</h1>
         <div>
           <label htmlFor="modelo">Modelo</label>
-          <input type="text" id="modelo" onChange={handleChange} placeholder=" " />
+          <input type="text" id="modelo" value={updateCarro.modelo} onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="fabricante">Fabricante</label>
-          <input type="text" id="fabricante" onChange={handleChange} placeholder=" " />
+          <input type="text" id="fabricante" value={updateCarro.fabricante} onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="numeroSerie">Número de Série</label>
-          <input type="number" id="numeroSerie" onChange={handleChange} placeholder=" " />
+          <input type="number" id="numeroSerie" value={updateCarro.numeroSerie} onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="ano">Ano</label>
-          <input type="number" id="ano" onChange={handleChange} placeholder=" " />
+          <input type="number" id="ano" value={updateCarro.ano} onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="potencia">Potência</label>
-          <input type="number" id="potencia" onChange={handleChange} placeholder=" " />
+          <input type="number" id="potencia" value={updateCarro.potencia} onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="preco">Preço</label>
-          <input type="number" id="preco" onChange={handleChange} placeholder=" " />
+          <input type="number" id="preco" value={updateCarro.preco} onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <button onClick={handleBack}>Voltar</button>
