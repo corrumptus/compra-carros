@@ -49,6 +49,7 @@ export default function CadastrarCarro() {
   return (
     <main>
       <form>
+        <h1>Cadastrar Carro</h1>
         <div>
           <label htmlFor="modelo">Modelo</label>
           <input type="text" id="modelo" onChange={handleChange} placeholder=" " />
