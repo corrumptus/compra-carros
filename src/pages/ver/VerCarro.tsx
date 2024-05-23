@@ -43,7 +43,7 @@ export default function VerCarro() {
         </div>
         <div>
           <button onClick={() => navigator("/")}>Voltar</button>
-          <button>Editar</button>
+          <button onClick={() => navigator(`/carro/${carro.id}`)}>Editar</button>
           <button>Excluir</button>
         </div>
       </div>
