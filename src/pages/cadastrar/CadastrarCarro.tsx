@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./cadastrar-carro.css";
 
 export default function CadastrarCarro() {
+  const navigator = useNavigate();
+
   return (
     <main>
       <form>
@@ -29,7 +32,7 @@ export default function CadastrarCarro() {
           <input type="number" id="preco" />
         </div>
         <div>
-          <button>Voltar</button>
+          <button onClick={() => navigator("/")}>Voltar</button>
           <button type="reset">Limpar</button>
           <button>Cadastrar</button>
         </div>
