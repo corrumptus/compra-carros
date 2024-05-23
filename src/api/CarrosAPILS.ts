@@ -9,7 +9,7 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
     }
 
     getAll(): Carro[] {
-        throw new Error("Method not implemented.");
+        return JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_KEY) as string);
     }
 
     get(key: number): Carro | undefined {
