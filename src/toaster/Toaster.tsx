@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./toaster.css";
 
 export default function useToasters() {
   const [ messages, setMessages ] = useState<string[]>([]);
