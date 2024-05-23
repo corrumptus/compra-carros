@@ -46,3 +46,26 @@ input {
     border-radius: 0.7rem;
     border: 1px solid #4d4d4d;
 }
+
+button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-out;
+}
+
+button:hover {
+    box-shadow: 0 0 7px 0 white;
+}
+
+button:nth-child(1) {
+    background-color: gray;
+}
+
+button:nth-child(2) {
+    background-color: #ff3131;
+}
+
+button:nth-child(3) {
+    background-color: #69cd1a;
+}
