@@ -11,6 +11,11 @@ export default function AtualizarCarro() {
 
   const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
 
+  if (id === undefined || carrosAPI.get(Number(id)) === undefined) {
+    navigator("/");
+    return null;
+  }
+
   const [ updateCarro, setUpdateCarro ] = useState<Carro>({
     id: -1,
     modelo: "",
