@@ -13,7 +13,7 @@ export default function CarroComponent({ carro }: { carro: Carro }) {
       <td>{carro.preco}</td>
       <td>
         <button onClick={() => navigator(`/carro/${carro.id}`)}>Ver</button>
-        <button>Editar</button>
+        <button onClick={() => navigator(`/carro/${carro.id}/edit`)}>Editar</button>
         <button>Excluir</button>
       </td>
     </tr>
