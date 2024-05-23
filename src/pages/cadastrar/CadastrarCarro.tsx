@@ -60,10 +60,12 @@ export default function CadastrarCarro() {
   }
 
   function handleCadastrar(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
+    e.preventDefault();
+
     try {
       carrosAPI.create(newCarro);
+      clearInputs(e);
     } catch (error) {
-      e.preventDefault();
       addToaster((error as Error).message);
     }
   }
