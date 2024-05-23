@@ -2,6 +2,10 @@ main#cadastrar  {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    background-image: url("../../../public/carro.png");
+    background-size: cover;
+    background-position: center left;
 }
 
 main#cadastrar form {
