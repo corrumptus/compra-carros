@@ -1,5 +1,5 @@
-import { ChangeEvent, MouseEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
 import "./atualizar-carro.css";
@@ -7,7 +7,12 @@ import "./atualizar-carro.css";
 export default function AtualizarCarro() {
   const navigator = useNavigate();
 
-  const [ newCarro, setNewCarro ] = useState<Omit<Carro, "id">>({
+  const { id } = useParams();
+
+  const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
+
+  const [ updateCarro, setUpdateCarro ] = useState<Carro>({
+    id: -1,
     modelo: "",
     fabricante: "",
     numeroSerie: -1,
@@ -16,19 +21,22 @@ export default function AtualizarCarro() {
     preco: -1
   });
 
-  const carrosAPI: API<number, "id", Carro> = new CarrosAPILS();
+  useEffect(() => {
+    setUpdateCarro(carrosAPI.get(Number(id)) as Carro);
+  });
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const changedField = e.target.id;
     const newValue = e.target.value;
 
-    setNewCarro(prev => ({ ...prev, [changedField]: newValue }));
+    setUpdateCarro(prev => ({ ...prev, [changedField]: newValue }));
   }
 
   function clearInputs(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     e.preventDefault();
 
-    setNewCarro({
+    setUpdateCarro({
+      id: -1,
       modelo: "",
       fabricante: "",
       numeroSerie: -1,
@@ -43,7 +51,7 @@ export default function AtualizarCarro() {
   }
 
   function handleCadastrar() {
-    carrosAPI.create(newCarro);
+    carrosAPI.create(updateCarro);
   }
 
   return (
