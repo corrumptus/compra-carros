@@ -42,7 +42,9 @@ export default function CadastrarCarro() {
     formTag?.querySelectorAll("input").forEach(input => input.value = "");
   }
 
-  function handleCadastrar() {
+  function handleCadastrar(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
+    e.preventDefault();
+
     carrosAPI.create(newCarro);
   }
 
