@@ -5,7 +5,7 @@ export default function ActionBar() {
   const navigator = useNavigate();
 
   return (
-    <header>
+    <header id="action-bar">
       <button onClick={() => navigator("/")}>Carros</button>
       <button onClick={() => navigator("/carro")}>Cadastrar</button>
     </header>
