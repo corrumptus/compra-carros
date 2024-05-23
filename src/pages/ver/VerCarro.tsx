@@ -17,6 +17,11 @@ export default function VerCarro() {
     return null;
   }
 
+  function handleDelete() {
+    carrosAPI.delete((carro as Carro).id);
+    navigator("/");
+  }
+
   return (
     <main id="ver">
       <div className="container">
@@ -44,7 +49,7 @@ export default function VerCarro() {
         <div>
           <button onClick={() => navigator("/")}>Voltar</button>
           <button onClick={() => navigator(`/carro/${carro.id}`)}>Editar</button>
-          <button>Excluir</button>
+          <button onClick={handleDelete}>Excluir</button>
         </div>
       </div>
     </main>
