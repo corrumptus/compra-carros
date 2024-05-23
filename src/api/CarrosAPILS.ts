@@ -58,7 +58,7 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
     delete(key: number): boolean {
         const carros = this.getAll();
 
-        localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(carros.filter(carro => carro.id === key)));
+        localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(carros.filter(carro => carro.id !== key)));
 
         return true;
     }
