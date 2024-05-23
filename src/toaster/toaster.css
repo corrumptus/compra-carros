@@ -13,8 +13,15 @@ div.toaster-container div.toaster {
     max-width: 200px;
     font-weight: bold;
     border-radius: 0.5rem;
-    color: #ff3131;
     animation: disappear 3s linear;
+}
+
+div.toaster-container div.toaster.success {
+    color: #69cd1a;
+}
+
+div.toaster-container div.toaster.error {
+    color: #ff3131;
 }
 
 @keyframes disappear {
