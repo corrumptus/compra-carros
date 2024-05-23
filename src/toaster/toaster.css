@@ -14,4 +14,14 @@ div.toaster-container div.toaster {
     font-weight: bold;
     border-radius: 0.5rem;
     color: #ff3131;
+    animation: disappear 3s linear;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
 }
