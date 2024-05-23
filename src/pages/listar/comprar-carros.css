@@ -1,4 +1,4 @@
-main {
+main#listar {
     background-image: url("../../../compra-carros.jpg");
     background-size: cover;
     background-position: center right;
@@ -9,7 +9,7 @@ main {
     font-family: sans-serif;
 }
 
-.lista-container {
+main#listar .lista-container {
     width: 82vw;
     height: 90vh;
     background-color: #ffffff55;
@@ -19,14 +19,14 @@ main {
     overflow: hidden;
 }
 
-h1 {
+main#listar h1 {
     margin: unset;
     width: 100%;
     padding: 0.8rem 1rem;
     background-color: #ffffff87;
 }
 
-.table-wrapper {
+main#listar .table-wrapper {
     width: 95%;
     max-height: calc(89% - 1.6rem);
     background-color: #ffffff87;
@@ -35,35 +35,35 @@ h1 {
     overflow: auto;
 }
 
-table, th, td {
+main#listar table, main#listar th, main#listar td {
     padding: 1rem;
     border-collapse: collapse;
     text-align: center;
 }
 
-table {
+main#listar table {
     width: 100%;
 }
 
-th {
+main#listar th {
     position: sticky;
     top: 0;
     left: 0;
     background-color: #d5d1de;
 }
 
-tbody tr:nth-child(odd) {
+main#listar tbody tr:nth-child(odd) {
     background-color: #ffffff55;
 }
 
-tbody tr:nth-child(even) {
+main#listar tbody tr:nth-child(even) {
     background-color: #00000017;
 }
 
-tbody tr:hover {
+main#listar tbody tr:hover {
     background-color: #ffffffcf;
 }
 
-td {
+main#listar td {
     font-size: 1.2em;
 }
