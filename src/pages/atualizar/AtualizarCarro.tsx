@@ -48,6 +48,11 @@ export default function AtualizarCarro() {
     carrosAPI.update(updateCarro);
   }
 
+  function handleBack(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
+    e.preventDefault();
+    navigator(-1);
+  }
+
   return (
     <main id="atualizar">
       <form>
@@ -77,7 +82,7 @@ export default function AtualizarCarro() {
           <input type="number" id="preco" onChange={handleChange} placeholder=" " />
         </div>
         <div>
-          <button onClick={() => navigator(-1)}>Voltar</button>
+          <button onClick={handleBack}>Voltar</button>
           <button onClick={handleAtualizar}>Atualizar</button>
           <button onClick={handleDelete}>Excluir</button>
         </div>
