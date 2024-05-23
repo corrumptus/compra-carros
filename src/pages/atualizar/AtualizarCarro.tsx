@@ -44,12 +44,15 @@ export default function AtualizarCarro() {
     navigator("/");
   }
 
-  function handleAtualizar() {
+  function handleAtualizar(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
+    e.preventDefault();
+
     carrosAPI.update(updateCarro);
   }
 
   function handleBack(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     e.preventDefault();
+
     navigator(-1);
   }
 
