@@ -53,7 +53,7 @@ export default function AtualizarCarro() {
   }
 
   return (
-    <main id="cadastrar">
+    <main id="atualizar">
       <form>
         <h1>Cadastrar Carro</h1>
         <div>

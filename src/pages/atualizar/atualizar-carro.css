@@ -1,4 +1,4 @@
-main#cadastrar  {
+main#atualizar  {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,7 +8,7 @@ main#cadastrar  {
     background-position: center left;
 }
 
-main#cadastrar form {
+main#atualizar form {
     padding: 2rem;
     background-color: #d3d3d3ba;
     display: flex;
@@ -17,23 +17,23 @@ main#cadastrar form {
     border-radius: 1rem;
 }
 
-main#cadastrar h1 {
+main#atualizar h1 {
     width: max-content;
     margin: unset;
 }
 
-main#cadastrar div {
+main#atualizar div {
     display: flex;
     flex-direction: column;
 }
 
-main#cadastrar div:last-child {
+main#atualizar div:last-child {
     flex-direction: row;
     gap: 0.7rem;
     justify-content: center;
 }
 
-main#cadastrar label {
+main#atualizar label {
     width: max-content;
     transform: translate(8px, 24px);
     transition: 0.7s ease;
@@ -41,36 +41,36 @@ main#cadastrar label {
     color: gray;
 }
 
-main#cadastrar div:has(input:focus, input:not(:placeholder-shown)) > label {
+main#atualizar div:has(input:focus, input:not(:placeholder-shown)) > label {
     transform: translate(0px, 0px);
     color: black;
 }
 
-main#cadastrar input {
+main#atualizar input {
     font-size: 1.1em;
     border-radius: 0.7rem;
     border: 1px solid #4d4d4d;
 }
 
-main#cadastrar button {
+main#atualizar button {
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
     transition: 0.5s ease-out;
 }
 
-main#cadastrar button:hover {
+main#atualizar button:hover {
     box-shadow: 0 0 7px 0 white;
 }
 
-main#cadastrar button:nth-child(1) {
+main#atualizar button:nth-child(1) {
     background-color: gray;
 }
 
-main#cadastrar button:nth-child(2) {
+main#atualizar button:nth-child(2) {
     background-color: #ff3131;
 }
 
-main#cadastrar button:nth-child(3) {
+main#atualizar button:nth-child(3) {
     background-color: #69cd1a;
 }
