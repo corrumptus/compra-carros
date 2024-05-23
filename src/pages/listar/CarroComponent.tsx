@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import Carro from "../../model/Carro";
 
 export default function CarroComponent({ carro }: { carro: Carro }) {
+  const navigator = useNavigate();
+
   return (
     <tr>
       <td>{carro.modelo}</td>
@@ -9,7 +12,7 @@ export default function CarroComponent({ carro }: { carro: Carro }) {
       <td>{carro.potencia}</td>
       <td>{carro.preco}</td>
       <td>
-        <button>Ver</button>
+        <button onClick={() => navigator(`/carro/${carro.id}`)}>Ver</button>
         <button>Editar</button>
         <button>Excluir</button>
       </td>
