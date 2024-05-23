@@ -2,10 +2,13 @@ import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
+import useToasters from "../../toaster/Toaster";
 import "./atualizar-carro.css";
 
 export default function AtualizarCarro() {
   const navigator = useNavigate();
+
+  const [ Toasters, addToaster ] = useToasters();
 
   const { id } = useParams();
 
@@ -25,8 +28,6 @@ export default function AtualizarCarro() {
     potencia: -1,
     preco: -1
   });
-
-  const [ error, setError ] = useState("");
 
   useEffect(() => {
     setUpdateCarro(carrosAPI.get(Number(id)) as Carro);
@@ -66,7 +67,7 @@ export default function AtualizarCarro() {
     try {
       carrosAPI.update(updateCarro);
     } catch (error) {
-      setError((error as Error).message);
+      addToaster((error as Error).message);
     }
   }
 
@@ -78,12 +79,7 @@ export default function AtualizarCarro() {
 
   return (
     <main id="atualizar">
-      {
-        error !== "" &&
-        <div id="error">
-          {error}
-        </div>
-      }
+      {Toasters}
       <form>
         <h1>Cadastrar Carro</h1>
         <div>
