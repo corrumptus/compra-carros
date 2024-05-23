@@ -59,7 +59,11 @@ export default function CadastrarCarro() {
   }
 
   function handleCadastrar() {
-    carrosAPI.create(newCarro);
+    try {
+      carrosAPI.create(newCarro);
+    } catch (error) {
+      setError((error as Error).message);
+    }
   }
 
   function handleBack(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
