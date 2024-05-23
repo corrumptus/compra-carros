@@ -6,3 +6,12 @@ div.toaster-container {
     top: 0.6rem;
     right: 0.6rem;
 }
+
+div.toaster-container div.toaster {
+    background-color: white;
+    padding: 0.5rem;
+    max-width: 200px;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    color: #ff3131;
+}
