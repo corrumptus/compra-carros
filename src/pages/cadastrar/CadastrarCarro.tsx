@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
 import "./cadastrar-carro.css";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, MouseEvent, useState } from "react";
 
 export default function CadastrarCarro() {
   const navigator = useNavigate();
@@ -23,6 +23,23 @@ export default function CadastrarCarro() {
     const newValue = e.target.value;
 
     setNewCarro(prev => ({ ...prev, [changedField]: newValue }));
+  }
+
+  function clearInputs(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
+    e.preventDefault();
+
+    setNewCarro({
+      modelo: "",
+      fabricante: "",
+      numeroSerie: -1,
+      ano: -1,
+      potencia: -1,
+      preco: -1
+    });
+
+    const formTag = e.currentTarget.parentElement?.parentElement;
+
+    formTag?.querySelectorAll("input").forEach(input => input.value = "");
   }
 
   function handleCadastrar() {
@@ -58,7 +75,7 @@ export default function CadastrarCarro() {
         </div>
         <div>
           <button onClick={() => navigator("/")}>Voltar</button>
-          <button type="reset">Limpar</button>
+          <button onClick={clearInputs}>Limpar</button>
           <button onClick={handleCadastrar}>Cadastrar</button>
         </div>
       </form>
