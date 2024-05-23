@@ -40,4 +40,56 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
 
         return true;
     }
+
+    private verificaCarro(carro: Partial<Carro>, carros: Carro[], isEditing: boolean): boolean {
+        if (
+            carro.modelo === undefined ||
+            carro.fabricante === undefined ||
+            carro.ano === undefined ||
+            carro.potencia === undefined ||
+            carro.preco === undefined ||
+            carro.numeroSerie === undefined
+        )
+            return false;
+
+        if (!isEditing && carro.id !== undefined)
+            return false;
+
+        if (isEditing && carro.id === undefined)
+            return false;
+
+        if (!this.isString(carro.modelo))
+            return false;
+
+        if (!this.isString(carro.fabricante))
+            return false;
+
+        if (!this.isNumber(carro.ano))
+            return false;
+
+        if (!this.isNumber(carro.potencia))
+            return false;
+
+        if (!this.isNumber(carro.preco))
+            return false;
+
+        if (!this.isNumber(carro.numeroSerie))
+            return false;
+
+        if (!isEditing && carros.find(c => c.numeroSerie === carro.numeroSerie) !== undefined)
+            return false;
+
+        if (isEditing && carros.find(c => c.id === carro.id) === undefined)
+            return false;
+
+        return true;
+    }
+
+    private isString(value: string): value is string {
+        return value !== null && typeof value === "string";
+    }
+
+    private isNumber(value: any): value is number {
+        return value !== null && typeof value === "number" && !isNaN(value);
+    }
 }
