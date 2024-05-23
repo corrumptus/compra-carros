@@ -18,7 +18,13 @@ export default function useToasters() {
   function deleteToaster(timeout: number) {
     clearTimeout(timeout);
 
-    setTimeouts(prev => prev.filter(t => t === timeout));
+    setTimeouts(prev => prev.filter((t, i) => {
+      if (t !== timeout)
+        return true;
+
+      setMessages(prev => prev.filter((_, index) => index !== i))
+      return false;
+    }));
   }
 
   return [
