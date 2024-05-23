@@ -55,8 +55,8 @@ export default function AtualizarCarro() {
     formTag?.querySelectorAll("input").forEach(input => input.value = "");
   }
 
-  function handleCadastrar() {
-    carrosAPI.create(updateCarro);
+  function handleAtualizar() {
+    carrosAPI.update(updateCarro);
   }
 
   return (
@@ -90,7 +90,7 @@ export default function AtualizarCarro() {
         <div>
           <button onClick={() => navigator("/")}>Voltar</button>
           <button onClick={clearInputs}>Limpar</button>
-          <button onClick={handleCadastrar}>Cadastrar</button>
+          <button onClick={handleAtualizar}>Cadastrar</button>
         </div>
       </form>
     </main>
