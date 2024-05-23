@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./toaster.css";
 
 export enum ToasterType {
-  INFO = "info",
+  SUCCESS = "success",
   ERROR = "error"
 }
 
