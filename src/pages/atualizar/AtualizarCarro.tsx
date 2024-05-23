@@ -26,6 +26,8 @@ export default function AtualizarCarro() {
     preco: -1
   });
 
+  const [ error, setError ] = useState("");
+
   useEffect(() => {
     setUpdateCarro(carrosAPI.get(Number(id)) as Carro);
   }, []);
@@ -72,6 +74,12 @@ export default function AtualizarCarro() {
 
   return (
     <main id="atualizar">
+      {
+        error !== "" &&
+        <div id="error">
+          {error}
+        </div>
+      }
       <form>
         <h1>Cadastrar Carro</h1>
         <div>
