@@ -22,7 +22,7 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
     }
 
     get(key: number): Carro | undefined {
-        throw new Error("Method not implemented.");
+        return this.getAll().find(carro => carro.id === key);
     }
 
     create(create: Omit<Carro, "id">): Carro | undefined {
