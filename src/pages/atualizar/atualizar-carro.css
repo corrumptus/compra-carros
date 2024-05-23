@@ -68,9 +68,9 @@ main#atualizar button:nth-child(1) {
 }
 
 main#atualizar button:nth-child(2) {
-    background-color: #ff3131;
+    background-color: #69cd1a;
 }
 
 main#atualizar button:nth-child(3) {
-    background-color: #69cd1a;
+    background-color: #ff3131;
 }
