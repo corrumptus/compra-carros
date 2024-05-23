@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./actionBar.css";
+import "./action-bar.css";
 
 export default function ActionBar() {
   const navigator = useNavigate();
