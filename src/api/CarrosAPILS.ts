@@ -1,6 +1,13 @@
 import Carro from "../model/Carro";
 
 export default class CarrosAPILS implements API<number, "id", Carro> {
+    private LOCAL_STORAGE_KEY = "carros_local_storage";
+
+    constructor() {
+        if (localStorage.getItem(this.LOCAL_STORAGE_KEY) === undefined)
+            localStorage.setItem(this.LOCAL_STORAGE_KEY, "");
+    }
+
     getAll(): Carro[] {
         throw new Error("Method not implemented.");
     }
