@@ -6,7 +6,7 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
 
     constructor() {
         if (localStorage.getItem(this.LOCAL_STORAGE_KEY) === undefined) {
-            localStorage.setItem(this.LOCAL_STORAGE_KEY, "");
+            localStorage.setItem(this.LOCAL_STORAGE_KEY, "[]");
             this.nextId = 1;
         } else {
             const carros = this.getAll();
