@@ -41,8 +41,8 @@ export default function CadastrarCarro() {
           <input type="text" id="fabricante" onChange={handleChange} />
         </div>
         <div>
-          <label htmlFor="n-serie">Número de Série</label>
-          <input type="number" id="n-serie" onChange={handleChange} />
+          <label htmlFor="numeroSerie">Número de Série</label>
+          <input type="number" id="numeroSerie" onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="ano">Ano</label>
