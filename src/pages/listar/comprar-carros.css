@@ -72,3 +72,26 @@ main#listar tr > td:last-child {
     justify-content: center;
     gap: 5px;
 }
+
+main#listar button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-out;
+}
+
+main#listar button:hover {
+    box-shadow: 0 0 7px 3px #919191;
+}
+
+main#listar button:nth-child(1) {
+    background-color: #69cd1a;
+}
+
+main#listar button:nth-child(2) {
+    background-color: #fbbf24;
+}
+
+main#listar button:nth-child(3) {
+    background-color: #ff3131;
+}
