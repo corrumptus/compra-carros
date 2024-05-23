@@ -60,6 +60,8 @@ export default function CadastrarCarro() {
     e.preventDefault();
 
     carrosAPI.create(newCarro);
+
+    navigator("/carro");
   }
 
   function handleBack(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
