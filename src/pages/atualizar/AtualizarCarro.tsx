@@ -83,7 +83,7 @@ export default function AtualizarCarro() {
         <div>
           <button onClick={() => navigator("/")}>Voltar</button>
           <button onClick={clearInputs}>Limpar</button>
-          <button onClick={handleAtualizar}>Cadastrar</button>
+          <button onClick={handleAtualizar}>Atualizar</button>
         </div>
       </form>
     </main>
