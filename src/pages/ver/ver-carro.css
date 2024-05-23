@@ -7,3 +7,12 @@ main#ver {
     background-size: cover;
     background-position: center;
 }
+
+main#ver div.container {
+    padding: 2rem;
+    background-color: #d3d3d3ba;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 1rem;
+}
