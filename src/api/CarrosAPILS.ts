@@ -5,16 +5,17 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
     private nextId;
 
     constructor() {
-        if (localStorage.getItem(this.LOCAL_STORAGE_KEY) === undefined) {
+        if (localStorage.getItem(this.LOCAL_STORAGE_KEY) === null) {
             localStorage.setItem(this.LOCAL_STORAGE_KEY, "[]");
             this.nextId = 1;
-        } else {
-            const carros = this.getAll();
-
-            const lastCarro = carros[carros.length - 1];
-
-            this.nextId = lastCarro.id + 1;
+            return;
         }
+
+        const carros = this.getAll();
+
+        const lastCarro = carros[carros.length - 1];
+
+        this.nextId = lastCarro === undefined ? 1 : lastCarro.id + 1;
     }
 
     getAll(): Carro[] {
