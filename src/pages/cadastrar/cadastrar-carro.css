@@ -27,3 +27,16 @@ div:last-child {
     gap: 0.7rem;
     justify-content: center;
 }
+
+label {
+    width: max-content;
+    transform: translate(8px, 24px);
+    transition: 0.7s ease;
+    font-size: 1.2em;
+    color: gray;
+}
+
+div:has(input:focus, input:not(:placeholder-shown)) > label {
+    transform: translate(0px, 0px);
+    color: black;
+}
