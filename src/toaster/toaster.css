@@ -1,0 +1,8 @@
+div.toaster-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+}
