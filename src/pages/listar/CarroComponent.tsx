@@ -8,6 +8,11 @@ export default function CarroComponent({ carro }: { carro: Carro }) {
       <td>{carro.ano}</td>
       <td>{carro.potencia}</td>
       <td>{carro.preco}</td>
+      <td>
+        <button>Ver</button>
+        <button>Editar</button>
+        <button>Excluir</button>
+      </td>
     </tr>
   )
 }

@@ -21,6 +21,7 @@ export default function ComprarCarros() {
                 <th>Ano</th>
                 <th>Potência</th>
                 <th>Preço</th>
+                <th>botões</th>
               </tr>
             </thead>
             <tbody>{carros.map(carro => <CarroComponent key={carro.id} carro={carro} />)}</tbody>
