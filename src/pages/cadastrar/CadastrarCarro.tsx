@@ -2,7 +2,7 @@ import { ChangeEvent, MouseEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
-import useToasters from "../../toaster/Toaster";
+import useToasters, { ToasterType } from "../../toaster/Toaster";
 import "./cadastrar-carro.css";
 
 export default function CadastrarCarro() {
@@ -65,8 +65,9 @@ export default function CadastrarCarro() {
     try {
       carrosAPI.create(newCarro);
       clearInputs(e);
+      addToaster("Carro created successfully", ToasterType.SUCCESS);
     } catch (error) {
-      addToaster((error as Error).message);
+      addToaster((error as Error).message, ToasterType.ERROR);
     }
   }
 

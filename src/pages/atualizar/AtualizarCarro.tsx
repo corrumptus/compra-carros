@@ -2,7 +2,7 @@ import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
-import useToasters from "../../toaster/Toaster";
+import useToasters, { ToasterType } from "../../toaster/Toaster";
 import "./atualizar-carro.css";
 
 export default function AtualizarCarro() {
@@ -66,8 +66,9 @@ export default function AtualizarCarro() {
 
     try {
       carrosAPI.update(updateCarro);
+      addToaster("Carro updated successfully", ToasterType.SUCCESS);
     } catch (error) {
-      addToaster((error as Error).message);
+      addToaster((error as Error).message, ToasterType.ERROR);
     }
   }
 
