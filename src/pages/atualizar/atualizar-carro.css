@@ -6,6 +6,19 @@ main#atualizar  {
     background-image: url("../../../public/carro.png");
     background-size: cover;
     background-position: center left;
+    position: relative;
+}
+
+main#cadastrar div#error {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background-color: white;
+    padding: 0.5rem;
+    max-width: 200px;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    color: #ff3131;
 }
 
 main#atualizar form {
