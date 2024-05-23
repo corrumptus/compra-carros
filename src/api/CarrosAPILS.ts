@@ -26,7 +26,18 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
     }
 
     create(create: Omit<Carro, "id">): Carro | undefined {
-        throw new Error("Method not implemented.");
+        const carros = this.getAll();
+
+        if (!this.verificaCarro(create, carros, false))
+            return undefined;
+
+        const newCarro: Carro = {...create, id: this.nextId};
+
+        localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify([...carros, newCarro]));
+
+        this.nextId++;
+
+        return newCarro;
     }
 
     update(update: Carro): Carro | undefined {
