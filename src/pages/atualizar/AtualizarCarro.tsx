@@ -37,15 +37,11 @@ export default function AtualizarCarro() {
     setUpdateCarro(prev => ({ ...prev, [changedField]: newValue }));
   }
 
-  function clearInputs(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
+  function handleDelete(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     e.preventDefault();
-
-    setUpdateCarro(carrosAPI.get(Number(id)) as Carro);
-
-    const formTag = e.currentTarget.parentElement?.parentElement;
-
-    formTag?.querySelectorAll("input")
-      .forEach(input => input.value = String(updateCarro[input.id as keyof Carro]));
+    
+    carrosAPI.delete(updateCarro.id);
+    navigator("/");
   }
 
   function handleAtualizar() {
@@ -82,8 +78,8 @@ export default function AtualizarCarro() {
         </div>
         <div>
           <button onClick={() => navigator(-1)}>Voltar</button>
-          <button onClick={clearInputs}>Limpar</button>
           <button onClick={handleAtualizar}>Atualizar</button>
+          <button onClick={handleDelete}>Excluir</button>
         </div>
       </form>
     </main>
