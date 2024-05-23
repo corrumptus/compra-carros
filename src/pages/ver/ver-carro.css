@@ -16,3 +16,8 @@ main#ver div.container {
     gap: 1.5rem;
     border-radius: 1rem;
 }
+
+main#ver h1 {
+    margin: unset;
+    text-align: center;
+}
