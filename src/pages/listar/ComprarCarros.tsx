@@ -9,7 +9,7 @@ export default function ComprarCarros() {
   const carros = carrosAPI.getAll();
 
   return (
-    <main>
+    <main id="listar">
       <div className="lista-container">
         <h1>Lista de Carro</h1>
         <div className="table-wrapper">

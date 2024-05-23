@@ -47,7 +47,7 @@ export default function CadastrarCarro() {
   }
 
   return (
-    <main>
+    <main id="cadastrar">
       <form>
         <h1>Cadastrar Carro</h1>
         <div>
