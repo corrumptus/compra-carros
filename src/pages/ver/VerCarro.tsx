@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
+import "./ver-carro.css";
 
 export default function VerCarro() {
   const navigator = useNavigate();
