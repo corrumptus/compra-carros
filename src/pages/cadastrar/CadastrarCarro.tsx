@@ -51,27 +51,27 @@ export default function CadastrarCarro() {
       <form>
         <div>
           <label htmlFor="modelo">Modelo</label>
-          <input type="text" id="modelo" onChange={handleChange} />
+          <input type="text" id="modelo" onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="fabricante">Fabricante</label>
-          <input type="text" id="fabricante" onChange={handleChange} />
+          <input type="text" id="fabricante" onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="numeroSerie">Número de Série</label>
-          <input type="number" id="numeroSerie" onChange={handleChange} />
+          <input type="number" id="numeroSerie" onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="ano">Ano</label>
-          <input type="number" id="ano" onChange={handleChange} />
+          <input type="number" id="ano" onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="potencia">Potência</label>
-          <input type="number" id="potencia" onChange={handleChange} />
+          <input type="number" id="potencia" onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <label htmlFor="preco">Preço</label>
-          <input type="number" id="preco" onChange={handleChange} />
+          <input type="number" id="preco" onChange={handleChange} placeholder=" " />
         </div>
         <div>
           <button onClick={() => navigator("/")}>Voltar</button>
