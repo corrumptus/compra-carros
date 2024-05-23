@@ -11,6 +11,11 @@ export default function VerCarro() {
 
   const carro = carrosAPI.get(Number(id));
 
+  if (id === undefined || carro === undefined) {
+    navigator("/");
+    return null;
+  }
+
   return (
     <main id="ver">
       <div className="container">
