@@ -38,3 +38,26 @@ main#ver p {
 main#ver span {
     font-size: 1.2em;
 }
+
+main#ver button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-out;
+}
+
+main#ver button:hover {
+    box-shadow: 0 0 7px 3px #919191;
+}
+
+main#ver button:nth-child(1) {
+    background-color: gray;
+}
+
+main#ver button:nth-child(2) {
+    background-color: #69cd1a;
+}
+
+main#ver button:nth-child(3) {
+    background-color: #ff3131;
+}
