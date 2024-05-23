@@ -2,8 +2,8 @@ import { ChangeEvent, MouseEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Carro from "../../model/Carro";
 import CarrosAPILS from "../../api/CarrosAPILS";
-import "./cadastrar-carro.css";
 import useToasters from "../../toaster/Toaster";
+import "./cadastrar-carro.css";
 
 export default function CadastrarCarro() {
   const navigator = useNavigate();
