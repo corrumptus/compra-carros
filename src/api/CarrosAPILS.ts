@@ -41,7 +41,17 @@ export default class CarrosAPILS implements API<number, "id", Carro> {
     }
 
     update(update: Carro): Carro | undefined {
-        throw new Error("Method not implemented.");
+        const carros = this.getAll();
+
+        if (!this.verificaCarro(update, carros, true))
+            return undefined;
+
+        localStorage.setItem(
+            this.LOCAL_STORAGE_KEY,
+            JSON.stringify(carros.map(carro => carro.id === update.id ? update : carro))
+        );
+
+        return update;
     }
 
     delete(key: number): boolean {
