@@ -5,6 +5,7 @@ div.toaster-container {
     position: absolute;
     top: 0.6rem;
     right: 0.6rem;
+    z-index: 999;
 }
 
 div.toaster-container div.toaster {
